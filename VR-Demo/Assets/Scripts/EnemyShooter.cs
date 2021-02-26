@@ -63,8 +63,6 @@ public class EnemyShooter : MonoBehaviour
         {
 
             Vector3 turretLookDirection = turretTransform.position - this.player.transform.position;
-            turretLookDirection.y = 0f;
-
             turretTransform.rotation = Quaternion.LookRotation(turretLookDirection);
         }
     }

@@ -7,8 +7,9 @@ public class ShellController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.root.gameObject.tag == "Enemy")
-            Destroy(collision.transform.root.gameObject);
+        var health = collision.transform.root.GetComponentInChildren<Health>();
+        if (health)
+            health.Damage(1);
         Destroy(this.transform.root.gameObject);
     }
 }
